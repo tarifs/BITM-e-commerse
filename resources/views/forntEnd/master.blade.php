@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="zxx">
 
 <head>
-    <title>Grocery Shoppy an Ecommerce Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
+    <title>@yield('title')</title>
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,14 +24,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
     </script>
     <!--//tags -->
-    <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
-    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
-    <link href="{{asset('assets/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('/')}}/front/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('/')}}/front/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('/')}}/front/css/font-awesome.css" rel="stylesheet">
     <!--pop-up-box-->
-    <link href="{{asset('assets/css/popuo-box.css')}}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{asset('/')}}/front/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
     <!--//pop-up-box-->
     <!-- price range -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery-ui1.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/')}}/front/css/jquery-ui1.css">
     <!-- fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 </head>
@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <a href="index.html">
                     <span>G</span>rocery
                     <span>S</span>hoppy
-                    <img src="{{asset('assets/images/logo2.png')}}" alt=" ">
+                    <img src="{{asset('/')}}/front/images/logo2.png" alt=" ">
                 </a>
             </h1>
         </div>
@@ -576,18 +576,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="agileits-navi_search">
             <form action="#" method="post">
                 <select id="agileinfo-nav_search" name="agileinfo_search" required="">
-                    <option value="">All Categories</option>
-                    <option value="Kitchen">Kitchen</option>
-                    <option value="Household">Household</option>
-                    <option value="Snacks &amp; Beverages">Snacks & Beverages</option>
-                    <option value="Personal Care">Personal Care</option>
-                    <option value="Gift Hampers">Gift Hampers</option>
-                    <option value="Fruits &amp; Vegetables">Fruits & Vegetables</option>
-                    <option value="Baby Care">Baby Care</option>
-                    <option value="Soft Drinks &amp; Juices">Soft Drinks & Juices</option>
-                    <option value="Frozen Food">Frozen Food</option>
-                    <option value="Bread &amp; Bakery">Bread & Bakery</option>
-                    <option value="Sweets">Sweets</option>
+                    <option value="">All Brands</option>
+                    @foreach($brands as $brand)
+                        <option>{{$brand->brand_name}}</option>
+                    @endforeach
                 </select>
             </form>
         </div>
@@ -608,155 +600,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav menu__list">
                             <li class="active">
-                                <a class="nav-stylehead" href="index.html">Home
+                                <a class="nav-stylehead" href="{{route('/')}}">Home
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
+                            @foreach($categories as $category)
                             <li class="">
-                                <a class="nav-stylehead" href="about.html">About Us</a>
+                                <a class="nav-stylehead" href="{{route('category-product',['id'=>$category->id])}}">{{$category->category_name}}</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kitchen
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu multi-column columns-3">
-                                    <div class="agile_inner_drop_nav_info">
-                                        <div class="col-sm-4 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li>
-                                                    <a href="product.html">Bakery</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Baking Supplies</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Coffee, Tea & Beverages</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Dried Fruits, Nuts</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Sweets, Chocolate</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Spices & Masalas</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Jams, Honey & Spreads</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li>
-                                                    <a href="product.html">Pickles</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Pasta & Noodles</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Rice, Flour & Pulses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Sauces & Cooking Pastes</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Snack Foods</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Oils, Vinegars</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product.html">Meat, Poultry & Seafood</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-4 multi-gd-img">
-                                            <img src="{{asset('assets/images/nav.png')}}" alt="">
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle nav-stylehead" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Household
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu multi-column columns-3">
-                                    <div class="agile_inner_drop_nav_info">
-                                        <div class="col-sm-6 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li>
-                                                    <a href="product2.html">Kitchen & Dining</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Detergents</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Utensil Cleaners</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Floor & Other Cleaners</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Disposables, Garbage Bag</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Repellents & Fresheners</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html"> Dishwash</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-6 multi-gd-img">
-                                            <ul class="multi-column-dropdown">
-                                                <li>
-                                                    <a href="product2.html">Pet Care</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Cleaning Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Pooja Needs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Crackers</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Festive Decoratives</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Plasticware</a>
-                                                </li>
-                                                <li>
-                                                    <a href="product2.html">Home Care</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a class="nav-stylehead" href="faqs.html">Faqs</a>
-                            </li>
-                            <li class="dropdown">
-                                <a class="nav-stylehead dropdown-toggle" href="#" data-toggle="dropdown">Pages
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu agile_short_dropdown">
-                                    <li>
-                                        <a href="icons.html">Web Icons</a>
-                                    </li>
-                                    <li>
-                                        <a href="typography.html">Typography</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="">
-                                <a class="nav-stylehead" href="contact.html">Contact</a>
-                            </li>
+                            @endforeach
+                            {{--<li class="">--}}
+                                {{--<a class="nav-stylehead" href="{{route('/about')}}">About Us</a>--}}
+                            {{--</li>--}}
+
+                            {{--<li class="">--}}
+                                {{--<a class="nav-stylehead" href="{{route('/contact')}}">Contact</a>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </div>
@@ -766,83 +625,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- //navigation -->
 <!-- banner -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators-->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="3" class=""></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>Big
-                        <span>Save</span>
-                    </h3>
-                    <p>Get flat
-                        <span>10%</span> Cashback</p>
-                    <a class="button2" href="product.html">Shop Now </a>
-                </div>
-            </div>
-        </div>
-        <div class="item item2">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>Healthy
-                        <span>Saving</span>
-                    </h3>
-                    <p>Get Upto
-                        <span>30%</span> Off</p>
-                    <a class="button2" href="product.html">Shop Now </a>
-                </div>
-            </div>
-        </div>
-        <div class="item item3">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>Big
-                        <span>Deal</span>
-                    </h3>
-                    <p>Get Best Offer Upto
-                        <span>20%</span>
-                    </p>
-                    <a class="button2" href="product.html">Shop Now </a>
-                </div>
-            </div>
-        </div>
-        <div class="item item4">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h3>Today
-                        <span>Discount</span>
-                    </h3>
-                    <p>Get Now
-                        <span>40%</span> Discount</p>
-                    <a class="button2" href="product.html">Shop Now </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-<!-- //banner -->
 @yield('body')
-
-<!-- top Products -->
-
-<!-- //top products -->
-<!-- special offers -->
-
-<!-- //special offers -->
 <!-- newsletter -->
 <div class="footer-top">
     <div class="container-fluid">
@@ -858,7 +641,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
         <div class="col-xs-4 w3l-rightmk">
-            <img src="{{asset('assets/images/tab3.png')}}" alt=" ">
+            <img src="{{asset('/')}}/front/images/tab3.png" alt=" ">
         </div>
         <div class="clearfix"></div>
     </div>
@@ -1025,10 +808,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="agileits_app-devices">
                     <h5>Download the App</h5>
                     <a href="#">
-                        <img src="{{asset('assets/images/1.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/1.png" alt="">
                     </a>
                     <a href="#">
-                        <img src="{{asset('assets/images/2.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/2.png" alt="">
                     </a>
                     <div class="clearfix"> </div>
                 </div>
@@ -1164,31 +947,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <h5>Payment Method</h5>
                 <ul>
                     <li>
-                        <img src="{{asset('assets/images/pay2.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay2.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay5.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay5.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay1.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay1.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay4.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay4.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay6.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay6.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay3.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay3.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay7.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay7.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay8.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay8.png" alt="">
                     </li>
                     <li>
-                        <img src="{{asset('assets/images/pay9.png')}}" alt="">
+                        <img src="{{asset('/')}}/front/images/pay9.png" alt="">
                     </li>
                 </ul>
             </div>
@@ -1210,11 +993,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- js-files -->
 <!-- jquery -->
-<script src="{{asset('assets/js/jquery-2.1.4.min.js')}}"></script>
+<script src="{{asset('/')}}/front/js/jquery-2.1.4.min.js"></script>
 <!-- //jquery -->
 
 <!-- popup modal (for signin & signup)-->
-<script src="{{asset('assets/js/jquery.magnific-popup.js')}}"></script>
+<script src="{{asset('/')}}/front/js/jquery.magnific-popup.js"></script>
 <script>
     $(document).ready(function () {
         $('.popup-with-zoom-anim').magnificPopup({
@@ -1238,7 +1021,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //popup modal (for signin & signup)-->
 
 <!-- cart-js -->
-<script src="{{asset('assets/js/minicart.js')}}"></script>
+<script src="{{asset('/')}}/front/js/minicart.js"></script>
 <script>
     paypalm.minicartk.render(); //use only unique class names other than paypalm.minicartk.Also Replace same class name in css and minicart.min.js
 
@@ -1262,7 +1045,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //cart-js -->
 
 <!-- price range (top products) -->
-<script src="{{asset('assets/js/jquery-ui.js')}}"></script>
+<script src="{{asset('/')}}/front/js/jquery-ui.js"></script>
 <script>
     //<![CDATA[
     $(window).load(function () {
@@ -1282,7 +1065,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //price range (top products) -->
 
 <!-- flexisel (for special offers) -->
-<script src="{{asset('assets/js/jquery.flexisel.js')}}"></script>
+<script src="{{asset('/')}}/front/js/jquery.flexisel.js"></script>
 <script>
     $(window).load(function () {
         $("#flexiselDemo1").flexisel({
@@ -1332,12 +1115,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //password-script -->
 
 <!-- smoothscroll -->
-<script src="{{asset('assets/js/SmoothScroll.min.js')}}"></script>
+<script src="{{asset('/')}}/front/js/SmoothScroll.min.js"></script>
 <!-- //smoothscroll -->
 
 <!-- start-smooth-scrolling -->
-<script src="{{asset('assets/js/move-top.js')}}"></script>
-<script src="{{asset('assets/js/easing.js')}}"></script>
+<script src="{{asset('/')}}/front/js/move-top.js"></script>
+<script src="{{asset('/')}}/front/js/easing.js"></script>
 <script>
     jQuery(document).ready(function ($) {
         $(".scroll").click(function (event) {
@@ -1371,7 +1154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //smooth-scrolling-of-move-up -->
 
 <!-- for bootstrap working -->
-<script src="{{asset('assets/js/bootstrap.js')}}"></script>
+<script src="{{asset('/')}}/front/js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
 <!-- //js-files -->
 
@@ -1379,4 +1162,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 
 </html>
-
