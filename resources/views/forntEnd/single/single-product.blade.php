@@ -1,11 +1,6 @@
 @extends('forntEnd.master')
-@section('title','Category')
+@section('title','Single')
 @section('body')
-    <div class="page-head_agile_info_w3l">
-
-    </div>
-    <!-- //banner-2 -->
-    <!-- page -->
     <div class="services-breadcrumb">
         <div class="agile_inner_breadcrumb">
             <div class="container">
@@ -14,17 +9,17 @@
                         <a href="index.html">Home</a>
                         <i>|</i>
                     </li>
-                    <li>Kitchen Products</li>
+                    <li>Single Page</li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- //page -->
-    <!-- top Products -->
-    <div class="ads-grid">
+    <!-- Single Page -->
+    <div class="banner-bootom-w3-agileits">
         <div class="container">
             <!-- tittle heading -->
-            <h3 class="tittle-w3l">Kitchen Products
+            <h3 class="tittle-w3l">{{$product->product_name}}
                 <span class="heading-style">
 					<i></i>
 					<i></i>
@@ -32,295 +27,118 @@
 				</span>
             </h3>
             <!-- //tittle heading -->
-            <!-- product left -->
-            <div class="side-bar col-md-3">
-                <div class="search-hotel">
-                    <h3 class="agileits-sear-head">Search Here..</h3>
-                    <form action="#" method="post">
-                        <input type="search" placeholder="Product name..." name="search" required="">
-                        <input type="submit" value=" ">
-                    </form>
-                </div>
-                <!-- price range -->
-                <div class="range">
-                    <h3 class="agileits-sear-head">Price range</h3>
-                    <ul class="dropdown-menu6">
-                        <li>
-
-                            <div id="slider-range"></div>
-                            <input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
-                        </li>
-                    </ul>
-                </div>
-                <!-- //price range -->
-                <!-- food preference -->
-                <div class="left-side">
-                    <h3 class="agileits-sear-head">Food Preference</h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Vegetarian</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Non-Vegetarian</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //food preference -->
-                <!-- discounts -->
-                <div class="left-side">
-                    <h3 class="agileits-sear-head">Discount</h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">5% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">10% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">20% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">30% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">50% or More</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">60% or More</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //discounts -->
-                <!-- reviews -->
-                <div class="customer-rev left-side">
-                    <h3 class="agileits-sear-head">Customer Review</h3>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <span>5.0</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>4.0</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>3.5</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>3.0</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                                <span>2.5</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //reviews -->
-                <!-- cuisine -->
-                <div class="left-side">
-                    <h3 class="agileits-sear-head">Cuisine</h3>
-                    <ul>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">South American</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">French</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Greek</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Chinese</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Japanese</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Italian</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Mexican</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Thai</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span">Indian</span>
-                        </li>
-                        <li>
-                            <input type="checkbox" class="checked">
-                            <span class="span"> Spanish </span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- //cuisine -->
-                <!-- deals -->
-                <div class="deal-leftmk left-side">
-                    <h3 class="agileits-sear-head">Special Deals</h3>
-                    <div class="special-sec1">
-                        <div class="col-xs-4 img-deals">
-                            <img src="{{asset('/')}}/front/images/d2.jpg" alt="">
-                        </div>
-                        <div class="col-xs-8 img-deal1">
-                            <h3>Lay's Potato Chips</h3>
-                            <a href="">$18.00</a>
-                        </div>
+            <div class="col-md-5 single-right-left ">
+                <div class="grid images_3_of_2">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li data-thumb="images/si.jpg">
+                                <div class="thumb-image">
+                                    <img src="{{asset($product->product_image)}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                            </li>
+                            <li data-thumb="images/si2.jpg">
+                                <div class="thumb-image">
+                                    <img src="{{asset($product->product_image)}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                            </li>
+                            <li data-thumb="images/si3.jpg">
+                                <div class="thumb-image">
+                                    <img src="{{asset($product->product_image)}}" data-imagezoom="true" class="img-responsive" alt=""> </div>
+                            </li>
+                        </ul>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="special-sec1">
-                        <div class="col-xs-4 img-deals">
-                            <img src="{{asset('/')}}/front/images/d1.jpg" alt="">
-                        </div>
-                        <div class="col-xs-8 img-deal1">
-                            <h3>Bingo Mad Angles</h3>
-                            <a href="">$9.00</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="special-sec1">
-                        <div class="col-xs-4 img-deals">
-                            <img src="{{asset('/')}}/front/images/d4.jpg" alt="">
-                        </div>
-                        <div class="col-xs-8 img-deal1">
-                            <h3>Tata Salt</h3>
-                            <a href="">$15.00</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="special-sec1">
-                        <div class="col-xs-4 img-deals">
-                            <img src="{{asset('/')}}/front/images/d5.jpg" alt="">
-                        </div>
-                        <div class="col-xs-8 img-deal1">
-                            <h3>Gujarat Dry Fruit</h3>
-                            <a href="">$525.00</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="special-sec1">
-                        <div class="col-xs-4 img-deals">
-                            <img src="{{asset('/')}}/front/images/d3.jpg" alt="">
-                        </div>
-                        <div class="col-xs-8 img-deal1">
-                            <h3>Cadbury Dairy Milk</h3>
-                            <a href="">$149.00</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <!-- //deals -->
-            </div>
-            <!-- //product left -->
-            <!-- product right -->
-            <div class="agileinfo-ads-display col-md-9 w3l-rightpro">
-                <div class="wrapper">
-                    <!-- first section -->
-                    <div class="product-sec1">
-                        @foreach($categoryProducts as $categoryProduct)
-                        <div class="col-xs-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{asset($categoryProduct->product_image)}}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="{{route('single-product',['id'=>$categoryProduct->id])}}" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <span class="product-new-top">New</span>
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="single.html">{{$categoryProduct->product_name}}</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">${{$categoryProduct->product_price}}</span>
-                                        <del>$1020.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Zeeba Basmati Rice - 5 KG" />
-                                                <input type="hidden" name="amount" value="950.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-                        <div class="clearfix"></div>
-                    </div>
-                    <!-- //first section -->
-
                 </div>
             </div>
-            <!-- //product right -->
+            <div class="col-md-7 single-right-left simpleCart_shelfItem">
+                <h3>{{$product->product_name}}</h3>
+                <div class="rating1">
+					<span class="starRating">
+						<input id="rating5" type="radio" name="rating" value="5">
+						<label for="rating5">5</label>
+						<input id="rating4" type="radio" name="rating" value="4">
+						<label for="rating4">4</label>
+						<input id="rating3" type="radio" name="rating" value="3" checked="">
+						<label for="rating3">3</label>
+						<input id="rating2" type="radio" name="rating" value="2">
+						<label for="rating2">2</label>
+						<input id="rating1" type="radio" name="rating" value="1">
+						<label for="rating1">1</label>
+					</span>
+                </div>
+                <p>
+                    <span class="item_price">{{$product->product_price}}<small>TK</small></span>
+                    <del>$1300.00</del>
+                    <label>Free delivery</label>
+                </p>
+                <div class="single-infoagile">
+                    <ul>
+                        <li>
+                            Cash on Delivery Eligible.
+                        </li>
+                        <li>
+                            Shipping Speed to Delivery.
+                        </li>
+                        <li>
+                            Sold and fulfilled by Supple Tek (3.6 out of 5 | 8 ratings).
+                        </li>
+                        <li>
+                            1 offer from
+                            <span class="item_price">$950.00</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-single-w3l">
+                    <p>
+                        <i class="fa fa-hand-o-right" aria-hidden="true"></i>This is a
+                        <label>Vegetarian</label> product.</p>
+                    <ul>
+                        <li>
+                            Best for Biryani and Pulao.
+                        </li>
+                        <li>
+                            After cooking, Zeeba Basmati rice grains attain an extra ordinary length of upto 2.4 cm/~1 inch.
+                        </li>
+                        <li>
+                            Zeeba Basmati rice adheres to the highest food afety standards as your health is paramount to us.
+                        </li>
+                        <li>
+                            Contains only the best and purest grade of basmati rice grain of Export quality.
+                        </li>
+                    </ul>
+                    <p>
+                        <i class="fa fa-refresh" aria-hidden="true"></i>All food products are
+                        <label>non-returnable.</label>
+                    </p>
+                </div>
+                <div class="occasion-cart">
+                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                        <form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart" />
+                                <input type="hidden" name="add" value="1" />
+                                <input type="hidden" name="business" value=" " />
+                                <input type="hidden" name="item_name" value="Zeeba Premium Basmati Rice - 5 KG" />
+                                <input type="hidden" name="amount" value="950.00" />
+                                <input type="hidden" name="discount_amount" value="1.00" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="hidden" name="return" value=" " />
+                                <input type="hidden" name="cancel_return" value=" " />
+                                <input type="submit" name="submit" value="Add to cart" class="button" />
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="clearfix"> </div>
         </div>
     </div>
-    <!-- //top products -->
+    <!-- //Single Page -->
     <!-- special offers -->
     <div class="featured-section" id="projects">
         <div class="container">
             <!-- tittle heading -->
-            <h3 class="tittle-w3l">Special Offers
+            <h3 class="tittle-w3l">Add More
                 <span class="heading-style">
 					<i></i>
 					<i></i>
@@ -606,5 +424,4 @@
             </div>
         </div>
     </div>
-    <!-- //special offers -->
-@endsection    
+@endsection

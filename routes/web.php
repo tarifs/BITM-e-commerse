@@ -163,6 +163,14 @@ Route::get('/product/delete/{id}',[
     'uses' => 'ProductController@deleteProduct',
     'as' => 'delete-product'
 ]);
+Route::get('/product/details/{id}',[
+    'uses' => 'FirstController@singleProduct',
+    'as' => 'single-product'
+]);
+
+Route::resource('crud','CrudController');
+
+Route::get('crud/delete/{id}','CrudController@destroy')->name('delete');
 
 
 Auth::routes();

@@ -305,6 +305,18 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Crud<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('crud.create')}}">Add</a>
+                            </li>
+                            <li>
+                                <a href="{{route('crud.index')}}">Manage</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
                         <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                     </li>
                     <li>

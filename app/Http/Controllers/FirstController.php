@@ -33,6 +33,12 @@ class FirstController extends Controller
         ]);
     }
 
+    public function singleProduct($id)
+    {
+        $product = Product::find($id);
+        return view('forntEnd.single.single-product')->with('product',$product);
+    }
+
     public function bakeryProduct(){
         return view('forntEnd.kitchen.bakeryProduct');
     }

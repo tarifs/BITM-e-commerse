@@ -30,6 +30,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--pop-up-box-->
     <link href="{{asset('/')}}/front/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
     <!--//pop-up-box-->
+    {{--flexslider--}}
+    <link rel="stylesheet" href="{{asset('/')}}/front/css/flexslider.css" type="text/css" media="screen" />
     <!-- price range -->
     <link rel="stylesheet" type="text/css" href="{{asset('/')}}/front/css/jquery-ui1.css">
     <!-- fonts -->
@@ -1151,13 +1153,60 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
+<script>
+    $(window).load(function () {
+        $("#flexiselDemo1").flexisel({
+            visibleItems: 3,
+            animationSpeed: 1000,
+            autoPlay: true,
+            autoPlaySpeed: 3000,
+            pauseOnHover: true,
+            enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: {
+                portrait: {
+                    changePoint: 480,
+                    visibleItems: 1
+                },
+                landscape: {
+                    changePoint: 640,
+                    visibleItems: 2
+                },
+                tablet: {
+                    changePoint: 768,
+                    visibleItems: 2
+                }
+            }
+        });
+
+    });
+</script>
 <!-- //smooth-scrolling-of-move-up -->
 
 <!-- for bootstrap working -->
 <script src="{{asset('/')}}/front/js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
 <!-- //js-files -->
+{{--<script src="{{asset('/')}}/front/js/jquery-2.1.4.min.js"></script--}}
+{{--<script src="{{asset('/')}}/front/js/jquery.magnific-popup.js"></script>--}}
+{{--<script src="{{asset('/')}}/front/js/minicart.js"></script>--}}
 
+
+{{--<script src="{{asset('/')}}/front/js/SmoothScroll.min.js"></script>--}}
+{{--<script src="{{asset('/')}}/front/js/move-top.js"></script>--}}
+{{--<script src="{{asset('/')}}/front/js/easing.js"></script>--}}
+<script src="{{asset('/')}}/front/js/imagezoom.js"></script>
+<script src="{{asset('/')}}/front/js/jquery.flexslider.js"></script>
+<script src="{{asset('/')}}/front/js/jquery.flexisel.js"></script>
+<script>
+    // Can also be used with $(document).ready()
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
+</script>
+<script src="{{asset('/')}}/front/js/bootstrap.js"></script>
 
 </body>
 
